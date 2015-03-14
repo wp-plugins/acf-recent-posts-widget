@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: gicolek
-Tags: recent, posts, advanced custom fields, acf, meta keys, widget
+Tags: widget, posts, advanced custom fields, acf, meta keys
 Requires at least: 4.1.1
 Tested up to: 4.1.1
 Stable tag: 4.1.1
