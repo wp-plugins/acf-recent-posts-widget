@@ -128,3 +128,6 @@ The plugin supports the following ACF fields:
 
 * <a href="http://www.advancedcustomfields.com/">ACF</a> (optional)
 * <a href="https://github.com/gicolek/Widget-Base-Class">Widget Base Class</a> (included)
+
+## Other ##
+* <a href="http://acfrpw-demo.wp-doin.com//">Online Demo</a> 
