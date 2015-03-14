@@ -1,6 +1,6 @@
 === Plugin Name ===
 Contributors: gicolek
-Tags: recent, posts, advanced custom fields, acf, meta keys
+Tags: recent, posts, advanced custom fields, acf, meta keys, widget
 Requires at least: 4.1.1
 Tested up to: 4.1.1
 Stable tag: 4.1.1
@@ -123,3 +123,8 @@ The plugin supports the following ACF fields:
 * File
 
  No other fields have been tested and are supported at the moment.
+
+## Dependencies ##
+
+* <a href="http://www.advancedcustomfields.com/">ACF</a> (optional)
+* <a href="https://github.com/gicolek/Widget-Base-Class">Widget Base Class</a> (included)
