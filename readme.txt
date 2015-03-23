@@ -14,17 +14,17 @@ ACF Recent Posts Widget (ACFRPW) is a WordPress plugin which adds a custom, exte
 ACFRPW adds a new widget to the Appearance -> Widgets -> ACF Recent Posts Widget. Most of the fields are quite obvious, you can choose from a set of settings to display the posts from. 
 Each setting alters the amount and type of posts listed in the sidebar.
 
-## Using the HTML textarea fields ##
+= Using the HTML textarea fields =
 
 These sections might not be obvious. The HTML or text before / after the whole loop setting is an area where you can specify custom HTML markup to be added before / after the whole posts list.
 The HTML or text before / after each post is an area where you can not only specify custom HTML, but you are also given an ability to print any meta key or certain ACF fields (see <a href="#acf-support">ACF supported fields</a>)
 
-## Meta Key Name / ACF Usage ##
+= Meta Key Name / ACF Usage =
 
 These fields need to be wrapped inside the [meta {name}] or [acf {field_name}] tags (which are similar to shortcodes). The plugin will then parse these fields and print their according value. Say we have a custom ACF field of type text, for which the Field Name is "text". 
 To print its value one has to use [acf text] inside the befoe / after each post textarea. A similar solution applies to the meta key.
 
-## Available Settings ##
+= Available Settings =
 
 The widget supports the following settings:
 
@@ -57,7 +57,7 @@ The widget supports the following settings:
 * Custom HTML to display after each posts. It supports custom meta keys and ACF fields
 * Custom and default CSS
 
-## ACF supported fields ##
+= ACF supported fields =
 
 The plugin supports the following ACF fields:
 
@@ -72,12 +72,12 @@ The plugin supports the following ACF fields:
 
  No other fields have been tested and are supported at the moment.
 
-## Dependencies ##
+= Dependencies =
 
 * <a href="http://www.advancedcustomfields.com/">ACF</a> (optional)
 * <a href="https://github.com/gicolek/Widget-Base-Class">Widget Base Class</a> (included)
 
-## Other ##
+= Other =
 * <a href="http://acfrpw-demo.wp-doin.com/">Online Demo</a> 
 * <a href="http://wp-doin.com/portfolio/acfrpw/">Plugin site</a>
 
