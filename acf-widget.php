@@ -4,7 +4,7 @@
   Plugin URI: http://wp-doin.com/portfolio/acfrpw/
   Description: Allow ACF and meta fields in the recent posts widget, giving control on the way recent posts are displayed.
   Author: Rafał Gicgier @wp-doin
-  Version: 1.0
+  Version: 4.1.2
   Author URI: http://wp-doin.com
   License: GPLv2 or later
   Copyright: Rafał Gicgier
