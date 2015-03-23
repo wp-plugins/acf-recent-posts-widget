@@ -123,14 +123,13 @@ Please make sure to have the default styles checkbox checked.
 == Changelog ==
 
 = 4.1.2 =
-* Small bug fixes *
-
-- fix issue with plugin not enqueueing displaying styles in certain cases
+* Small bug fixes 
+- fix issue with plugin not enqueueing default styles in certain cases
 - fix issue with date being displayed all the time
 - improve readme
 
 = 4.1.1 =
-* Plugin first release *
+* Plugin first release 
 
 == Upgrade Notice ==
 
