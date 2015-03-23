@@ -134,6 +134,11 @@ Please make sure to have the default styles checkbox checked.
 
 == Upgrade Notice ==
 
+= 1.1 =
+- fix issue with plugin not enqueueing displaying styles in certain cases
+- fix issue with date being displayed all the time
+- improve readme
+
 = 1.0 =
  N/A
 
