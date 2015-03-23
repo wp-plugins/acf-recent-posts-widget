@@ -3,7 +3,7 @@ Contributors: gicolek
 Tags: widget, posts, recent, acf, meta keys
 Requires at least: 4.1.1
 Tested up to: 4.1.1
-Stable tag: 4.1.1
+Stable tag: 4.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,58 +13,6 @@ ACF Recent Posts Widget (ACFRPW) is a WordPress plugin which adds a custom, exte
 
 ACFRPW adds a new widget to the Appearance -> Widgets -> ACF Recent Posts Widget. Most of the fields are quite obvious, you can choose from a set of settings to display the posts from. 
 Each setting alters the amount and type of posts listed in the sidebar.
-
-
-== Installation ==
-
-This section describes how to install the plugin and get it working.
-
-1. Upload and unpack `acf-widget.zip` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Drag and Drop the ACF Recent Posts Widget to the sidebar area
-
-== Frequently Asked Questions ==
-
-= Does the Plugin require Advanced Custom Fields? =
-
-No it doesn't. Some functionalities will be missing though and a notification will be shown to the user on Plugins dashboard page.
-
-= Does the Widget support author display? =
-
-No it doesn't. We're considering this as an update.
-
-= Does the Plugin support shortcodes, or custom posts function? =
-
-No it doesn't. We're considering this as an update.
-
-= Does the Widget come with any pre made classes to wrap the HTML with? =
-
-No it doesn't.
-
-= The widget styles are messy and the thumbnail doesn't adjust its position ? =
-
-Please make sure to have the default styles checkbox checked.
-
-== Screenshots ==
-
-1. Installing the plugin
-2. Meta Key placement (found at the bottom of each post / page edit screen)
-3. ACF Field Name placement (found under Custom Fields section with ACF enabled)
-4. First widget screen
-5. Second widget screen
-6. Third widget screen
-
-== Changelog ==
-
-= 1.0 =
-* Plugin first release *
-
-== Upgrade Notice ==
-
-= 1.0 =
- N/A
-
-== Plugin Detailed Usage ==
 
 ## Using the HTML textarea fields ##
 
@@ -130,4 +78,62 @@ The plugin supports the following ACF fields:
 * <a href="https://github.com/gicolek/Widget-Base-Class">Widget Base Class</a> (included)
 
 ## Other ##
-* <a href="http://acfrpw-demo.wp-doin.com//">Online Demo</a> 
+* <a href="http://acfrpw-demo.wp-doin.com/">Online Demo</a> 
+* <a href="http://wp-doin.com/portfolio/acfrpw/">Plugin site</a>
+
+== Installation ==
+
+This section describes how to install the plugin and get it working.
+
+1. Upload and unpack `acf-widget.zip` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Drag and Drop the ACF Recent Posts Widget to the sidebar area
+
+== Frequently Asked Questions ==
+
+= Does the Plugin require Advanced Custom Fields? =
+
+No it doesn't. Some functionalities will be missing though and a notification will be shown to the user on Plugins dashboard page.
+
+= Does the Widget support author display? =
+
+No it doesn't. We're considering this as an update.
+
+= Does the Plugin support shortcodes, or custom posts function? =
+
+No it doesn't. We're considering this as an update.
+
+= Does the Widget come with any pre made classes to wrap the HTML with? =
+
+No it doesn't.
+
+= The widget styles are messy and the thumbnail doesn't adjust its position ? =
+
+Please make sure to have the default styles checkbox checked.
+
+== Screenshots ==
+
+1. Installing the plugin
+2. Meta Key placement (found at the bottom of each post / page edit screen)
+3. ACF Field Name placement (found under Custom Fields section with ACF enabled)
+4. First widget screen
+5. Second widget screen
+6. Third widget screen
+
+== Changelog ==
+
+= 4.1.2 =
+* Small bug fixes *
+
+- fix issue with plugin not enqueueing displaying styles in certain cases
+- fix issue with date being displayed all the time
+- improve readme
+
+= 4.1.1 =
+* Plugin first release *
+
+== Upgrade Notice ==
+
+= 1.0 =
+ N/A
+

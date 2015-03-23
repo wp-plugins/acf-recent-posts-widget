@@ -81,6 +81,7 @@ class ACF_Recent_Posts_Widget {
 	 */
 	public function front_enqueue_scripts() {
 		wp_register_style( 'acf-rpw-main', plugins_url( 'css/acf-widget-front.css', __FILE__ ) );
+		wp_enqueue_style( 'acf-rpw-main' );
 	}
 
 	/**

@@ -115,11 +115,8 @@ class ACF_Rpw_Widget extends Widget_Base {
 			if ( $title ) {
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
-			// enqueue default widget styles
-			if ( isset( $default_styles ) ) {
-				wp_enqueue_style( 'acf-rpw-main' );
-			}
-// If the default style is disabled then use the custom css if it's not empty.
+			
+			// If the default style is disabled then use the custom css if it's not empty.
 			if ( !isset( $default_styles ) && !empty( $custom_css ) ) {
 				echo '<style>' . $custom_css . '</style>';
 			}
@@ -161,7 +158,7 @@ class ACF_Rpw_Widget extends Widget_Base {
 							<h3 class="acf-rpw-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php get_the_title() ? the_title() : the_ID(); ?></a></h3>
 							<?php
 							// show the date
-							if ( isset( $ds ) ):
+							if ( isset( $dd ) ):
 								?>
 								<time class="acf-rpw-time published" datetime="<?php echo get_the_date( 'c' ); ?>"><?php
 									// if date relative is to be displayed
