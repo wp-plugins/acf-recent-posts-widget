@@ -95,6 +95,11 @@ This section describes how to install the plugin and get it working.
 
 No it doesn't. Some functionalities will be missing though and a notification will be shown to the user on Plugins dashboard page.
 
+= What ACF version does it support? =
+
+The plugin supports the latest ACF 4.X.X version, currently ACF 5 is not supported, however the plugin should work fine. If you want to get rid of the notice see: https://wordpress.org/support/topic/acf-5-compatibility-2
+
+
 = Does the Widget support author display? =
 
 No it doesn't. We're considering this as an update.
