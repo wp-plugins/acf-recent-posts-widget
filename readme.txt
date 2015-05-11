@@ -2,8 +2,8 @@
 Contributors: gicolek
 Tags: widget, posts, recent, acf, meta keys, admin
 Requires at least: 4.1.1
-Tested up to: 4.1.1
-Stable tag: 4.1.2
+Tested up to: 4.2.2
+Stable tag: 4.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,16 +13,6 @@ ACF Recent Posts Widget (ACFRPW) is a WordPress plugin which adds a custom, exte
 
 ACFRPW adds a new widget to the Appearance -> Widgets -> ACF Recent Posts Widget. Most of the fields are quite obvious, you can choose from a set of settings to display the posts from. 
 Each setting alters the amount and type of posts listed in the sidebar.
-
-= Using the HTML textarea fields =
-
-These sections might not be obvious. The HTML or text before / after the whole loop setting is an area where you can specify custom HTML markup to be added before / after the whole posts list.
-The HTML or text before / after each post is an area where you can not only specify custom HTML, but you are also given an ability to print any meta key or certain ACF fields (see <a href="#acf-support">ACF supported fields</a>)
-
-= Meta Key Name / ACF Usage =
-
-These fields need to be wrapped inside the [meta {name}] or [acf {field_name}] tags (which are similar to shortcodes). The plugin will then parse these fields and print their according value. Say we have a custom ACF field of type text, for which the Field Name is "text". 
-To print its value one has to use [acf text] inside the befoe / after each post textarea. A similar solution applies to the meta key.
 
 = Available Settings =
 
@@ -79,7 +69,11 @@ The plugin supports the following ACF fields:
 
 = Other =
 * <a href="http://acfrpw-demo.wp-doin.com/">Online Demo</a> 
-* <a href="http://wp-doin.com/portfolio/acfrpw/">Plugin site</a>
+* <a href="http://wp-doin.com/portfolio/acfrpw/">Plugin site and Docs</a>
+
+= Languages Supported =
+* English (default)
+* Polish (since May 11 2015)
 
 == Installation ==
 
@@ -127,6 +121,18 @@ Please make sure to have the default styles checkbox checked.
 
 == Changelog ==
 
+= 4.1.3 =
+* Meta Key options
+- add meta_compare query parameter
+- add meta_value query parameter
+- add ability to specify date shortcode inside the meta_value box
+
+* Introduce plugin filters
+- add ability to filter the query using add_filter function
+
+* Revamp the readme file
+* Introduce polish version
+
 = 4.1.2 =
 * Small bug fixes 
 - fix issue with plugin not enqueueing default styles in certain cases
@@ -146,3 +152,32 @@ Please make sure to have the default styles checkbox checked.
 = 1.0 =
  N/A
 
+== Complex usage ==
+
+This section covers plugin complex usage for advanced user willing to have more control over the behavior of the plugin as well as explains uncommon functionalities.
+
+= Using the HTML textarea fields =
+
+These sections might not be obvious. The HTML or text before / after the whole loop setting is an area where you can specify custom HTML markup to be added before / after the whole posts list.
+The HTML or text before / after each post is an area where you can not only specify custom HTML, but you are also given an ability to print any meta key or certain ACF fields (see <a href="#acf-support">ACF supported fields</a>)
+
+= Meta Key Name / ACF Usage =
+
+These fields need to be wrapped inside the [meta {name}] or [acf {field_name}] tags (which are similar to shortcodes). The plugin will then parse these fields and print their according value. Say we have a custom ACF field of type text, for which the Field Name is "text". 
+To print its value one has to use [acf text] inside the befoe / after each post textarea. A similar solution applies to the meta key.
+
+= Meta Value Usage =
+The Meta Value field supports an array of elements, so that all of the meta_compare parameters could be used. To do so, please specify the two parameters separated by semicolon, for instance: 1234;12345.
+The plugin will convert these into an array and apply the proper operation for the two. Whatsmore the [date] shortcode can be used here. It takes the timestamp paramater as an argument. For instance [date +1 day] would generate the tomorrow date in "Ymd" format.
+This can be used with custom meta field date.
+
+= Plugin Filters =
+
+The are several filters that can be used to enchance the plugin programatically:
+
+* 'acf_rwp_query' which gives one the ability to filter the query applied to each widget. 
+* 'acp_rwp_before' which gives on the ability to filter the Front End output of the plugin before each post. There are two hooks attached here already which allow usage of the [acf] and [meta] shortcodes.
+* 'acp_rwp_after' which gives on the ability to filter the Front End output of the plugin after each post. There are two hooks attached here already which allow usage of the [acf] and [meta] shortcodes.
+* 'acf_meta_value' which filters the meta_value query parameter. 
+
+Check the acf_widget_widget file for the arguments and use cases.
