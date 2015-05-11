@@ -71,6 +71,10 @@ The plugin supports the following ACF fields:
 * <a href="http://acfrpw-demo.wp-doin.com/">Online Demo</a> 
 * <a href="http://wp-doin.com/portfolio/acfrpw/">Plugin site and Docs</a>
 
+= Languages Supported =
+* English (default)
+* Polish (since May 11 2015)
+
 == Installation ==
 
 This section describes how to install the plugin and get it working.
@@ -127,6 +131,7 @@ Please make sure to have the default styles checkbox checked.
 - add ability to filter the query using add_filter function
 
 * Revamp the readme file
+* Introduce polish version
 
 = 4.1.2 =
 * Small bug fixes 
