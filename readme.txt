@@ -1,5 +1,6 @@
 === Plugin Name ===
 Contributors: gicolek
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=395CM2TL992JL
 Tags: widget, posts, recent, acf, meta keys, admin
 Requires at least: 4.1.1
 Tested up to: 4.1.1
