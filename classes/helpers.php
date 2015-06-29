@@ -51,6 +51,20 @@ class ACF_Helper {
 	}
 
 	/**
+	 * Regex callback function for the PHP date. Returns the output of the date function.
+	 * @param ARRAY_A $matches
+	 */
+	public static function date_filter($content) {
+		$content = preg_replace_callback( '/\[date(.*?)\]/s', array( __CLASS__, 'regex_date_filter_callback' ), $content );
+		return $content;
+	}
+
+	public static function regex_date_filter_callback($matches) {
+		$match = trim( $matches[1] );
+		return date( 'Ymd', strtotime( $match ) );
+	}
+
+	/**
 	 * Regex callback function for the ACF. Returns the corresponding ACF field value.
 	 * @param ARRAY_A $matches
 	 */

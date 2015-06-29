@@ -54,15 +54,15 @@ class Widget_Base extends WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( $field ); ?>">
-		<?php _e( $label, 'acf_rpw' ); ?>
+				<?php _e( $label, 'acf_rpw' ); ?>
 			</label>
 			<input class="widefat <?php echo $class; ?>" 
 				   id="<?php echo $this->get_field_id( $field ); ?>" 
 				   name="<?php echo $this->get_field_name( $field ); ?>" type="text" 
-				   value="<?php echo esc_attr( $this->form_instance[$field] ); ?>" />
-			<?php if ( !empty( $note ) ): ?>
+				   value="<?php echo esc_attr( isset( $this->form_instance[$field] ) ? $this->form_instance[$field] : ''  ); ?>" />
+				   <?php if ( !empty( $note ) ): ?>
 				<small><?php echo $note; ?></small>
-		<?php endif; ?>
+			<?php endif; ?>
 		</p>
 		<?php
 	}
@@ -78,14 +78,14 @@ class Widget_Base extends WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( $field ); ?>">
-		<?php _e( $label, 'acf_rpw' ); ?>
+				<?php _e( $label, 'acf_rpw' ); ?>
 			</label>
 			<textarea class="widefat" 
 					  id="<?php echo $this->get_field_id( $field ); ?>" 
-					  name="<?php echo $this->get_field_name( $field ); ?>"><?php echo esc_attr( $this->form_instance[$field] ); ?></textarea>
-			<?php if ( !empty( $note ) ): ?>
+					  name="<?php echo $this->get_field_name( $field ); ?>"><?php echo esc_attr( isset( $this->form_instance[$field] ) ? $this->form_instance[$field] : ''  ); ?></textarea>
+					  <?php if ( !empty( $note ) ): ?>
 				<small><?php echo $note; ?></small>
-		<?php endif; ?>
+			<?php endif; ?>
 		</p>
 		<?php
 	}
@@ -104,24 +104,24 @@ class Widget_Base extends WP_Widget {
 		<div class="acf-rpw-multiple-check-form">
 			<p>
 				<label for="<?php echo $this->get_field_id( $field ); ?>">
-		<?php _e( $label, 'acf_rpw' ); ?>
+					<?php _e( $label, 'acf_rpw' ); ?>
 				</label>
 			</p>
 			<ul>
-		<?php foreach ( $elements as $key => $elem ) : ?>
+				<?php foreach ( $elements as $key => $elem ) : ?>
 					<li>
-						<input type="checkbox" value="<?php echo esc_attr( $key ); ?>" id="<?php echo $this->get_field_id( $field ) . '-' . $elem; ?>" name="<?php echo $this->get_field_name( $field ); ?>[]" <?php checked( is_array( $this->form_instance[$field] ) && in_array( $key, $this->form_instance[$field] ) ); ?> />
+						<input type="checkbox" value="<?php echo esc_attr( $key ); ?>" id="<?php echo $this->get_field_id( $field ) . '-' . $elem; ?>" name="<?php echo $this->get_field_name( $field ); ?>[]" <?php checked( isset( $this->form_instance[$field] ) && is_array( $this->form_instance[$field] ) && in_array( $key, $this->form_instance[$field] ) ); ?> />
 						<label for="<?php echo $this->get_field_id( $field ) . '-' . $elem; ?>">
-			<?php echo esc_attr( ucfirst( $elem ) ); ?>
+							<?php echo esc_attr( ucfirst( $elem ) ); ?>
 						</label>
 					</li>
-			<?php endforeach; ?>
+				<?php endforeach; ?>
 			</ul>
-		<?php if ( !empty( $note ) ): ?>
+			<?php if ( !empty( $note ) ): ?>
 				<p>
 					<small><?php echo $note; ?></small>
 				</p>
-		<?php endif; ?>
+			<?php endif; ?>
 		</div>
 		<?php
 	}
@@ -138,13 +138,13 @@ class Widget_Base extends WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( $field ); ?>">
-		<?php _e( $label, 'acf_rpw' ); ?>
+				<?php _e( $label, 'acf_rpw' ); ?>
 			</label>
 			<select class="widefat" id="<?php echo $this->get_field_id( $field ); ?>" name="<?php echo $this->get_field_name( $field ); ?>" style="width:100%;">
-		<?php foreach ( $elements as $key => $elem ) : ?>
-					<option value="<?php echo $key; ?>" <?php selected( $this->form_instance[$field], $key ); ?>><?php echo ucfirst( $elem ); ?></option>
+				<?php foreach ( $elements as $key => $elem ) : ?>
+					<option value="<?php echo $key; ?>" <?php isset( $this->form_instance[$field] ) ? selected( $this->form_instance[$field], $key ) : ''; ?>><?php echo ucfirst( $elem ); ?></option>
 				</li>
-		<?php endforeach; ?>
+			<?php endforeach; ?>
 		</select>
 		<?php if ( !empty( $note ) ): ?>
 			<small><?php echo $note; ?></small>

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widget, posts, recent, acf, meta keys, admin
 Requires at least: 4.1.1
 Tested up to: 4.2.2
-Stable tag: 4.1.3
+Stable tag: 4.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,8 @@ The widget supports the following settings:
 * Order specifiaction	(ASC or DESC)
 * Orderby specification (ID, Author, Title, Date, Modified, Random, Comment Count, Menu Order, Meta Value, Meta Value Numeric)
 * Meta Key specifiaction (if Meta Value or Meta Value Numeric were chosen as orderby rule)
+* Meta Comparison selection
+* Meta Value Specification (for the Meta Comparison selection)
 * Category limitation
 * Tag limitation
 * Id based custom taxonomy limitation
@@ -75,6 +77,7 @@ The plugin supports the following ACF fields:
 = Languages Supported =
 * English (default)
 * Polish (since May 11 2015)
+* French (since June 29 2015), by <a href="https://wordpress.org/support/profile/wolforg">wolforg</a> <a href="http://www.wptrads.com/extension/acf-recent-posts-widget/">standalone</a>
 
 == Installation ==
 
@@ -122,6 +125,16 @@ Please make sure to have the default styles checkbox checked.
 
 == Changelog ==
 
+= 4.1.4 =
+
+* Bug Fixes
+Make sure there are no wrong constants used
+Fix undefined index issue in a number of cases
+
+* New language support
+- French, by: 
+wolforg / http://www.wptrads.com/extension/acf-recent-posts-widget/
+
 = 4.1.3 =
 * Meta Key options
 - add meta_compare query parameter
@@ -145,13 +158,36 @@ Please make sure to have the default styles checkbox checked.
 
 == Upgrade Notice ==
 
-= 1.1 =
-- fix issue with plugin not enqueueing displaying styles in certain cases
+= 4.1.4 =
+
+* Bug Fixes
+Make sure there are no wrong constants used
+Fix undefined index issue in a number of cases
+
+* New language support
+- French, by: 
+wolforg / http://www.wptrads.com/extension/acf-recent-posts-widget/
+
+= 4.1.3 =
+* Meta Key options
+- add meta_compare query parameter
+- add meta_value query parameter
+- add ability to specify date shortcode inside the meta_value box
+
+* Introduce plugin filters
+- add ability to filter the query using add_filter function
+
+* Revamp the readme file
+* Introduce polish version
+
+= 4.1.2 =
+* Small bug fixes 
+- fix issue with plugin not enqueueing default styles in certain cases
 - fix issue with date being displayed all the time
 - improve readme
 
-= 1.0 =
- N/A
+= 4.1.1 =
+* Plugin first release 
 
 == Complex usage ==
 

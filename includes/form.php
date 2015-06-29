@@ -40,20 +40,44 @@
 	?>
 	<?php
 	echo parent::gts( 'orderby', __( 'Orderby', 'acf_rpw' ), array(
-		'ID' => 'ID',
-		'author' => 'Author',
-		'title' => 'Title',
-		'date' => 'Date',
-		'modified' => 'Modified',
-		'rand' => 'Random',
-		'comment_count' => 'Comment Count',
-		'menu_order' => 'Menu Order',
-		'meta_value' => 'Meta Value',
+		'ID' => __( 'ID', 'acf_rpw' ),
+		'author' => __( 'Author', 'acf_rpw' ),
+		'title' => __( 'Title', 'acf_rpw' ),
+		'date' => __( 'Date', 'acf_rpw' ),
+		'modified' => __( 'Modified', 'acf_rpw' ),
+		'rand' => __( 'Random', 'acf_rpw' ),
+		'comment_count' => __( 'Comment Count', 'acf_rpw' ),
+		'menu_order' => __( 'Menu Order', 'acf_rpw' ),
+		'meta_value' => __( 'Meta Value', 'acf_rpw' ),
 		'meta_value_num' => __( 'Meta Value Numeric', 'acf_rpw' ) ), __( 'If meta order is specified the next field cannot be empty.', 'acf_rpw' ) );
 	echo parent::gti( 'mk', __( 'Meta Key', 'acf_rpw' ), __( 'Fetch only posts having the Meta Key. Required if Meta Value or Meta Value Numeric was selected above.', 'acf_rpw' ) );
+	echo parent::gts( 'meta_compare', __( 'Meta compare', 'acf_rpw' ), array(
+		'' => __( 'None', 'acf_rpw' ),
+		'=' => __( '=', 'acf_rpw' ),
+		'!=' => __( '!=', 'acf_rpw' ),
+		'>' => __( '>', 'acf_rpw' ),
+		'>=' => __( '>=', 'acf_rpw' ),
+		'<' => __( '<', 'acf_rpw' ),
+		'<=' => __( '<=', 'acf_rpw' ),
+		'LIKE' => __( 'LIKE', 'acf_rpw' ),
+		'IN' => __( 'IN', 'acf_rpw' ),
+		'NOT IN' => __( 'NOT IN', 'acf_rpw' ),
+		'BETWEEN' => __( 'BETWEEN', 'acf_rpw' ),
+		'NOT BETWEEN' => __( 'NOT BETWEEN', 'acf_rpw' ),
+		'EXISTS' => __( 'EXISTS', 'acf_rpw' ),
+		'NOT EXISTS' => __( 'NOT EXISTS', 'acf_rpw' ),
+		'REGEXP' => __( 'REGEXP', 'acf_rpw' ),
+		'NOT REGEXP' => __( 'NOT REGEXP', 'acf_rpw' ),
+		'RLIKE' => __( 'RLIKE', 'acf_rpw' ),
+			), __( 'Specify the meta compare format, see CODEX and plugin documentation for further reference.', 'acf_rpw' ) );
+
+	echo parent::gti( 'meta_value', __( 'Meta Value', 'acf_rpw' ), __( 'Specify the Meta Value to compare the key with. Leave empty for none.', 'acf_rpw' ) );
+	//echo parent::gt( 'mq', __( 'Meta Query.', 'acf_rpw' ), __( 'See plugin documentation for further reference.', 'acf_rpw' ) );
 	?>
+</div>
 
-
+<div class="acf-rpw-columns-3 acf-rpw-column-last">
+	
 	<?php
 	// obtain the categories list
 	$categories = array();
@@ -74,12 +98,9 @@
 	echo parent::gti( 'ltt', __( 'Limit to taxonomy', 'acf_rpw' ), __( 'Ex: category=1,2,4&amp;post-tag=6,12.', 'acf_rpw' ) );
 	echo parent::gts( 'ltto', __( 'Operator', 'acf_rpw' ), array( 'IN' => __( 'IN', 'acf_rpw' ), 'NOT IN' => __( 'NOT IN', 'acf_rpw' ) ), __( '"IN" includes posts from the taxonomies, NOT IN excludes posts from these taxonomies.', 'acf_rpw' ) );
 	?>
-</div>
 
-<div class="acf-rpw-columns-3 acf-rpw-column-last">
-
-	<?php echo parent::gti( 'np', __( 'Number of posts to show', 'acf_rpw' ), 'Use -1 to list all posts.' ); ?>
-	<?php echo parent::gti( 'ns', __( 'Number of posts to skip', 'acf_rpw' ), 'Ignored if -1 is specified above.' ); ?>
+	<?php echo parent::gti( 'np', __( 'Number of posts to show', 'acf_rpw' ), __( 'Use -1 to list all posts.', 'acf_rpw' ) ); ?>
+	<?php echo parent::gti( 'ns', __( 'Number of posts to skip', 'acf_rpw' ), __( 'Ignored if -1 is specified above.', 'acf_rpw' ) ); ?>
 	<?php
 	// thumbnail related settings
 	if ( current_theme_supports( 'post-thumbnails' ) ) {
@@ -98,16 +119,16 @@
 			?>
 		</div>
 		<?php
-		parent::gti( 'dfth', __( 'Default Thumbnail', 'acf_rpw' ), 'Specify full, valid image URL here. Ex: http://placehold.it/50x50/f0f0f0/ccc. All of the above apply to thumbnails but not to ACF image field type. Use CSS "acf-img" class to reference these.' );
+		parent::gti( 'dfth', __( 'Default Thumbnail', 'acf_rpw' ), __( 'Specify full, valid image URL here. Ex: http://placehold.it/50x50/f0f0f0/ccc. All of the above apply to thumbnails but not to ACF image field type. Use CSS "acf-img" class to reference these.', 'acf_rpw' ) );
 		?>
 
 	<?php } ?>
 	<?php
 	echo parent::gtc( 'excerpt', __( 'Show excerpt', 'acf_rpw' ), array( 'ignore' => __( 'Ignore', 'acf_rpw' ) ) );
-	echo parent::gti( 'el', __( 'Excerpt Length', 'acf_rpw' ), 'Limits the excerpt to specified number of words.' );
+	echo parent::gti( 'el', __( 'Excerpt Length', 'acf_rpw' ), __( 'Limits the excerpt to specified number of words.', 'acf_rpw' ) );
 	echo parent::gtc( 'is', __( 'Display Readmore', 'acf_rpw' ), array( __( 'Readmore', 'acf_rpw' ) ) );
 	?>
-<?php echo parent::gti( 'rt', __( 'Readmore text', 'acf_rpw' ), 'Leave empty for default "... Continue Reading" text. If full excerpt is printed, this text will not appear.' ); ?>
+	<?php echo parent::gti( 'rt', __( 'Readmore text', 'acf_rpw' ), __( 'Leave empty for default "... Continue Reading" text. If full excerpt is printed, this text will not appear.', 'acf_rpw' ) ); ?>
 </div>
 
 <div class="clear"></div>

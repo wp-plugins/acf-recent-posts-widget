@@ -22,10 +22,10 @@ class ACF_Rpw_Widget extends Widget_Base {
 	 */
 	function __construct() {
 
-		$this->text_fields = array( 'css', 'tu', 'ex', 's', 'dd', 'df', 'ds', 'de', 'aut', 'mk', 'ltt', 'np', 'ns', 'thh', 'thw', 'dfth', 'el', 'rt', 'pass' );
-		$this->text_areas = array( 'before', 'after', 'before_posts', 'after_posts', 'custom_css' );
+		$this->text_fields = array( 'css', 'tu', 'ex', 's', 'dd', 'df', 'ds', 'de', 'aut', 'mk', 'meta_value', 'ltt', 'np', 'ns', 'thh', 'thw', 'dfth', 'el', 'rt', 'pass' );
+		$this->text_areas = array( 'before', 'after', 'before_posts', 'after_posts', 'custom_css', /* 'mq' */ );
 		$this->checkboxes = array( 'is', 'ds', /* not needed without specific time'di', */ 'dr', 'dth', 'pt', 'pf', 'ps', 'ltc', 'lttag', 'excerpt', 'is', 'default_styles', 'hp', 'ep' );
-		$this->select_fields = array( 'ord', 'orderby', 'ltto', 'tha' );
+		$this->select_fields = array( 'ord', 'orderby', 'ltto', 'tha', 'meta_compare' );
 
 		parent::__construct(
 				'acf_rpw', // Base ID
@@ -115,7 +115,7 @@ class ACF_Rpw_Widget extends Widget_Base {
 			if ( $title ) {
 				echo $args['before_title'] . $title . $args['after_title'];
 			}
-			
+
 			// If the default style is disabled then use the custom css if it's not empty.
 			if ( !isset( $default_styles ) && !empty( $custom_css ) ) {
 				echo '<style>' . $custom_css . '</style>';
@@ -347,6 +347,29 @@ class ACF_Rpw_Widget extends Widget_Base {
 			$query_args['meta_key'] = $mk;
 		}
 
+		// obtain the meta compare parameter
+		if ( isset( $meta_compare ) and $meta_compare != 'NONE' ) {
+			$query_args['meta_compare'] = $meta_compare;
+		}
+
+		// obtain the meta value parameter
+		if ( isset( $meta_value ) and ! empty( $meta_value ) ) {
+			// check if we need to convert this to array
+			if ( strpos( $meta_value, ';' ) !== false ) {
+				$meta_value = explode( ';', $meta_value );
+			}
+
+			// apply the date filters here
+			if ( is_array( $meta_value ) ) {
+				foreach ( $meta_value as &$mv ) {
+					$mv = apply_filters( 'acf_meta_value', $mv );
+				}
+			} else {
+				$meta_value = apply_filters( 'acf_meta_value', $meta_value );
+			}
+			$query_args['meta_value'] = $meta_value;
+		}
+
 
 // add post type parameters
 		if ( isset( $pt ) ) {
@@ -458,7 +481,7 @@ class ACF_Rpw_Widget extends Widget_Base {
 			$query_args['orderby'] = $orderby;
 		}
 
-		return $query_args;
+		return apply_filters( 'acf_rwp_query', $query_args, $instance, $this->id_base );
 	}
 
 }
