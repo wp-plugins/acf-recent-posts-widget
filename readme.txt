@@ -99,8 +99,7 @@ No it doesn't. Some functionalities will be missing though and a notification wi
 
 = What ACF version does it support? =
 
-The plugin supports the latest ACF 4.X.X version, currently ACF 5 is not supported, however the plugin should work fine. If you want to get rid of the notice see: https://wordpress.org/support/topic/acf-5-compatibility-2
-
+The plugin supports the latest ACF 4.X.X version, currently ACF 5 is in Beta and not fully supported. However the plugin should work fine as long as there won't be much differences between the two versions. If you want to get rid of the notice see: https://wordpress.org/support/topic/acf-5-compatibility-2
 
 = Does the Widget support author display? =
 
