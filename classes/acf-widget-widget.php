@@ -42,14 +42,14 @@ class ACF_Rpw_Widget extends Widget_Base {
 	/**
 	 * @to be hooked
 	 */
-	public function excerpt_length() {
+	public static function excerpt_length() {
 		return ( int ) ACF_Rpw_Widget::$el;
 	}
 
 	/**
 	 * @to be hooked
 	 */
-	public function excerpt_more() {
+	public static function excerpt_more() {
 		$link = '';
 		if ( !empty( ACF_Rpw_Widget::$rt ) ) {
 			$link = ' <a href="' . get_permalink() . '" class="more-link">' . esc_attr( ACF_Rpw_Widget::$rt ) . '</a>';
@@ -189,7 +189,7 @@ class ACF_Rpw_Widget extends Widget_Base {
 									add_filter( 'excerpt_length', array( __CLASS__, 'excerpt_length' ), 999 );
 								}
 								// define custom excerpt more
-								if ( isset( $is ) ) {
+								if ( isset( $rt ) ) {
 									ACF_Rpw_Widget::$rt = $rt;
 									// make sure custom filter is hooked and not default excerpt is used
 									if ( isset( $rt ) and ! empty( $rt ) ) {
@@ -281,6 +281,10 @@ class ACF_Rpw_Widget extends Widget_Base {
 			$query_args['offset'] = ( int ) $ns;
 		}
 
+		// ignore sticky posts if checked
+		if ( isset( $is ) ) {
+			$query_args['ignore_sticky_posts'] = 1;
+		}
 // search by keyword 
 		if ( isset( $s ) and ! empty( $s ) ) {
 			$query_args['s'] = $s;

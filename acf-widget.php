@@ -4,7 +4,7 @@
   Plugin URI: http://wp-doin.com/portfolio/acfrpw/
   Description: Allow ACF and meta fields in the recent posts widget, giving control on the way recent posts are displayed.
   Author: Rafał Gicgier @wp-doin
-  Version: 4.1.4
+  Version: 4.1.5
   Author URI: http://wp-doin.com
   License: GPLv2 or later
   Copyright: Rafał Gicgier
@@ -47,12 +47,12 @@ class ACF_Recent_Posts_Widget {
 		// apply custom filtering functions to the before and after filter
 		add_action( 'acp_rwp_before', array( 'ACF_Helper', 'af_bf_content_filter' ) );
 		add_action( 'acp_rwp_after', array( 'ACF_Helper', 'af_bf_content_filter' ) );
-		
+
 		// apply custom filtering functions to the acf meta value
 		add_filter( 'acf_meta_value', array( 'ACF_Helper', 'date_filter' ) );
-		
+
 		// verify if the ACF is active
-		if ( !is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
+		if ( !is_plugin_active( 'advanced-custom-fields/acf.php' ) and !is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 			// ACF absent display admin notices
 			add_action( 'admin_notices', array( $this, 'admin_notify_no_acf' ) );
 		}
@@ -120,4 +120,3 @@ class ACF_Recent_Posts_Widget {
 
 // instantiate the plugin
 $acf_rpw = new ACF_Recent_Posts_Widget();
-

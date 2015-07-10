@@ -43,7 +43,7 @@ class ACF_Helper {
 	 */
 	public static function af_bf_content_filter($content) {
 		// run these filters only if ACF is active
-		if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
+		if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) or is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) ) {
 			$content = preg_replace_callback( '/\[acf(.*?)\]/s', array( __CLASS__, 'regex_acf_filter_callback' ), $content );
 		}
 		$content = preg_replace_callback( '/\[meta(.*?)\]/s', array( __CLASS__, 'regex_filter_callback' ), $content );
