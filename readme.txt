@@ -52,6 +52,10 @@ The widget supports the following settings:
 
 = ACF supported fields =
 
+The plugin has been written and tested with ACF 4 (Free). Since version 4.1.5 ACF Pro is also supported,
+but there's no guarantee to the code - it's a Beta phase and will be kept as long as ACF Pro will not have any bigger
+differences between the ACF Free.
+
 The plugin supports the following ACF fields:
 
 * Text
@@ -63,7 +67,7 @@ The plugin supports the following ACF fields:
 * Image
 * File
 
- No other fields have been tested and are supported at the moment.
+No other fields have been tested and are supported at the moment.
 
 = Dependencies =
 
@@ -77,7 +81,7 @@ The plugin supports the following ACF fields:
 = Languages Supported =
 * English (default)
 * Polish (since May 11 2015)
-* French (since June 29 2015), by <a href="https://wordpress.org/support/profile/wolforg">wolforg</a> <a href="http://www.wptrads.com/extension/acf-recent-posts-widget/">standalone</a>
+* French (since June 29 2015), by <a href="https://wordpress.org/support/profile/wolforg">wolforg</a>, <a href="http://www.wptrads.com/extension/acf-recent-posts-widget/">standalone source</a>
 
 == Installation ==
 
@@ -95,8 +99,7 @@ No it doesn't. Some functionalities will be missing though and a notification wi
 
 = What ACF version does it support? =
 
-The plugin supports the latest ACF 4.X.X version, currently ACF 5 is not supported, however the plugin should work fine. If you want to get rid of the notice see: https://wordpress.org/support/topic/acf-5-compatibility-2
-
+The plugin supports the latest ACF 4.X.X version, currently ACF 5 is in Beta and not fully supported. However the plugin should work fine as long as there won't be much differences between the two versions. If you want to get rid of the notice see: https://wordpress.org/support/topic/acf-5-compatibility-2
 
 = Does the Widget support author display? =
 
@@ -125,69 +128,111 @@ Please make sure to have the default styles checkbox checked.
 
 == Changelog ==
 
+= 4.1.5 =
+
+**ACF Pro Beta Support**
+
+ACF Pro is supported from now on. However due to possible differences between ACF 4
+there is no guarantee of its support
+
+**Bug Fixes**
+
+* make sure there are no strict standards errors while printing the excerpt
+* fix read more button not appearing due to sticky posts conflict
+* make sure ignore sticky posts option works 
+
 = 4.1.4 =
 
-* Bug Fixes
-Make sure there are no wrong constants used
-Fix undefined index issue in a number of cases
+**Bug Fixes**
 
-* New language support
-- French, by: 
-wolforg / http://www.wptrads.com/extension/acf-recent-posts-widget/
+* Make sure there are no wrong constants used
+* Fix undefined index issue in a number of cases
+
+**New language support**
+
+* French, by: wolforg / http://www.wptrads.com/extension/acf-recent-posts-widget/
 
 = 4.1.3 =
-* Meta Key options
-- add meta_compare query parameter
-- add meta_value query parameter
-- add ability to specify date shortcode inside the meta_value box
 
-* Introduce plugin filters
-- add ability to filter the query using add_filter function
+**Meta Key options**
 
-* Revamp the readme file
-* Introduce polish version
+* add meta_compare query parameter
+* add meta_value query parameter
+* add ability to specify date shortcode inside the meta_value box
+
+**Introduce plugin filters**
+
+* add ability to filter the query using add_filter function
+
+**Revamp the readme file**
+
+**Introduce polish version**
 
 = 4.1.2 =
-* Small bug fixes 
-- fix issue with plugin not enqueueing default styles in certain cases
-- fix issue with date being displayed all the time
-- improve readme
+
+**Small bug fixes**
+
+* fix issue with plugin not enqueueing default styles in certain cases
+* fix issue with date being displayed all the time
+* improve readme
 
 = 4.1.1 =
-* Plugin first release 
+
+**Plugin first release**
 
 == Upgrade Notice ==
 
+= 4.1.5 =
+
+**ACF Pro Beta Support**
+
+ACF Pro is supported from now on. However due to possible differences between ACF 4
+there is no guarantee of its support
+
+**Bug Fixes**
+
+* make sure there are no strict standards errors while printing the excerpt
+* fix read more button not appearing due to sticky posts conflict
+* make sure ignore sticky posts option works 
+
 = 4.1.4 =
 
-* Bug Fixes
-Make sure there are no wrong constants used
-Fix undefined index issue in a number of cases
+**Bug Fixes**
 
-* New language support
-- French, by: 
-wolforg / http://www.wptrads.com/extension/acf-recent-posts-widget/
+* Make sure there are no wrong constants used
+* Fix undefined index issue in a number of cases
+
+**New language support**
+
+* French, by: wolforg / http://www.wptrads.com/extension/acf-recent-posts-widget/
 
 = 4.1.3 =
-* Meta Key options
-- add meta_compare query parameter
-- add meta_value query parameter
-- add ability to specify date shortcode inside the meta_value box
 
-* Introduce plugin filters
-- add ability to filter the query using add_filter function
+**Meta Key options**
 
-* Revamp the readme file
-* Introduce polish version
+* add meta_compare query parameter
+* add meta_value query parameter
+* add ability to specify date shortcode inside the meta_value box
+
+**Introduce plugin filters**
+
+* add ability to filter the query using add_filter function
+
+**Revamp the readme file**
+
+**Introduce polish version**
 
 = 4.1.2 =
-* Small bug fixes 
-- fix issue with plugin not enqueueing default styles in certain cases
-- fix issue with date being displayed all the time
-- improve readme
+
+**Small bug fixes**
+
+* fix issue with plugin not enqueueing default styles in certain cases
+* fix issue with date being displayed all the time
+* improve readme
 
 = 4.1.1 =
-* Plugin first release 
+
+**Plugin first release**
 
 == Complex usage ==
 
