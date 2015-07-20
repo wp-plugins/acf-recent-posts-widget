@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widget, posts, recent, acf, meta keys, admin
 Requires at least: 4.1.1
 Tested up to: 4.2.2
-Stable tag: 4.1.5
+Stable tag: 4.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ The widget supports the following settings:
 * Option to ignore sticky posts
 * Search keyword query
 * Id based post exclusion
-* Date Display, Relative and Custom Date Format specifiaction
+* Date Display, Date Modified, Relative and Custom Date Format specifiaction
 * Listing posts from specific date period (start and end)
 * Listing posts with specific password, listing password protected posts only or excluding these
 * Post Type selection
@@ -127,6 +127,17 @@ Please make sure to have the default styles checkbox checked.
 6. Third widget screen
 
 == Changelog ==
+
+= 4.1.6 =
+
+**Bug Fixes**
+
+* make sure the date can be hidden
+* make sure the thumbnail can be hidden
+
+**ACF Pro Beta Support**
+
+* add option to print post modified date
 
 = 4.1.5 =
 

@@ -6,6 +6,7 @@
 	echo parent::gti( 's', __( 'Search Keyword', 'acf_rpw' ), __( 'If specified it will limit posts satisfying the search query.', 'acf_rpw' ) );
 	echo parent::gti( 'ex', __( 'Exclude', 'acf_rpw' ), __( 'Specify comma separated post ids.', 'acf_rpw' ) );
 	echo parent::gtc( 'dd', __( 'Display Date', 'acf_rpw' ), array( __( 'Display Date', 'acf_rpw' ) ) );
+	echo parent::gtc( 'dlm', __( 'Display Modified Date', 'acf_rpw' ), array( __( 'Display Modified Date', 'acf_rpw' ) ), __( 'Checked - displays the last modified date of the post. Settings below apply.', 'acf_rpw' ) );
 	echo parent::gti( 'df', __( 'Date Format', 'acf_rpw' ), __( 'Specify any custom date format - <a href="http://codex.wordpress.org/Formatting_Date_and_Time" target="_blank">reference</a>.', 'acf_rpw' ) );
 	echo parent::gtc( 'dr', __( 'Date Relative', 'acf_rpw' ), array( 'Date Relative' ), __( 'Checked - ignores the date format. Displays date in relateive format ex: 2 minutes ago.', 'acf_rpw' ) );
 	echo parent::gti( 'ds', __( 'Date Start', 'acf_rpw' ), __( 'Start date of posts to render. Posts during that day are not included.', 'acf_rpw' ), 'picker' );

@@ -22,9 +22,9 @@ class ACF_Rpw_Widget extends Widget_Base {
 	 */
 	function __construct() {
 
-		$this->text_fields = array( 'css', 'tu', 'ex', 's', 'dd', 'df', 'ds', 'de', 'aut', 'mk', 'meta_value', 'ltt', 'np', 'ns', 'thh', 'thw', 'dfth', 'el', 'rt', 'pass' );
+		$this->text_fields = array( 'css', 'tu', 'ex', 's', 'df', 'ds', 'de', 'aut', 'mk', 'meta_value', 'ltt', 'np', 'ns', 'thh', 'thw', 'dfth', 'el', 'rt', 'pass' );
 		$this->text_areas = array( 'before', 'after', 'before_posts', 'after_posts', 'custom_css', /* 'mq' */ );
-		$this->checkboxes = array( 'is', 'ds', /* not needed without specific time'di', */ 'dr', 'dth', 'pt', 'pf', 'ps', 'ltc', 'lttag', 'excerpt', 'is', 'default_styles', 'hp', 'ep' );
+		$this->checkboxes = array( 'is', 'ds', /* not needed without specific time'di', */ 'dd', 'dlm', 'dr', 'dth', 'pt', 'pf', 'ps', 'ltc', 'lttag', 'excerpt', 'is', 'default_styles', 'hp', 'ep' );
 		$this->select_fields = array( 'ord', 'orderby', 'ltto', 'tha', 'meta_compare' );
 
 		parent::__construct(
@@ -130,7 +130,7 @@ class ACF_Rpw_Widget extends Widget_Base {
 				<ul class="acf-rpw-ul">
 					<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 						<li class="acf-rpw-li acf-rpw-clearfix">
-							<?php if ( has_post_thumbnail() ): ?>
+							<?php if ( has_post_thumbnail() and isset( $dth ) ): ?>
 								<a class="acf-rpw-img" rel="bookmark">
 									<?php
 									$thumb_id = get_post_thumbnail_id(); // Get the featured image id.
@@ -163,12 +163,21 @@ class ACF_Rpw_Widget extends Widget_Base {
 								<time class="acf-rpw-time published" datetime="<?php echo get_the_date( 'c' ); ?>"><?php
 									// if date relative is to be displayed
 									if ( isset( $dr ) ):
-										echo sprintf( __( '%s ago', 'acf_rpw' ), human_time_diff( get_the_date( 'U' ), current_time( 'timestamp' ) ) );
+										// display last modified date or not
+										if ( isset( $dlm ) ) {
+											echo sprintf( __( '%s ago', 'acf_rpw' ), human_time_diff( get_the_modified_date( 'U' ), current_time( 'timestamp' ) ) );
+										} else {
+											echo sprintf( __( '%s ago', 'acf_rpw' ), human_time_diff( get_the_date( 'U' ), current_time( 'timestamp' ) ) );
+										}
 									else:
-										the_time( isset( $df ) ? $df : ''  );
+										if ( isset( $dlm ) ) {
+											the_modified_time( isset( $df ) ? $df : ''  );
+										} else {
+											the_time( isset( $df ) ? $df : ''  );
+										}
 									endif;
 									?></time>
-								<?php
+									<?php
 							endif;
 
 							// before each post
